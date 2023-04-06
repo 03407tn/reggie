@@ -155,7 +155,6 @@ public class DishController {
      */
     @GetMapping("/list")
     public R<List<Dish>> dish(Dish dish){
-
         LambdaQueryWrapper<Dish> queryWrapper=new LambdaQueryWrapper<>();
         queryWrapper.eq(dish.getCategoryId() != null,Dish::getCategoryId,dish.getCategoryId());
         queryWrapper.eq(Dish::getStatus,1);
