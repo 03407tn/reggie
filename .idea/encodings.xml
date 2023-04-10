@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/common/JacksonObjectMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/controller/AddressBookController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/domain/AddressBook.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/domain/Category.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/domain/Dish.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/domain/DishFlavor.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/domain/OrderDetail.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/domain/Orders.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/domain/Setmeal.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/domain/SetmealDish.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/domain/ShoppingCart.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/domain/User.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/dto/DishDto.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/dto/SetmealDto.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/utils/SMSUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/tn/utils/ValidateCodeUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/application.yml" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

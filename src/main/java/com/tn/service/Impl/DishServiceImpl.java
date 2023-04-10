@@ -3,6 +3,7 @@ package com.tn.service.Impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.conditions.query.LambdaQueryChainWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.tn.domain.Category;
 import com.tn.domain.Dish;
 import com.tn.domain.DishFlavor;
 import com.tn.dto.DishDto;
@@ -82,6 +83,19 @@ public class DishServiceImpl extends ServiceImpl<DishMapper, Dish> implements Di
 
         dishFlavorService.saveBatch(flavors);
 
+    }
+
+    @Override
+    @Transactional
+    public void removeWithFlavor(List<Long> ids) {
+        log.info(ids.toString());
+        //先删除菜品表数据
+        removeByIds(ids);
+        //再删除口味表数据
+        LambdaQueryWrapper<DishFlavor> queryWrapper=new LambdaQueryWrapper<>();
+
+        queryWrapper.in(DishFlavor::getDishId,ids);
+        dishFlavorService.remove(queryWrapper);
     }
 
 
