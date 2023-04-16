@@ -9,6 +9,7 @@ import com.tn.utils.ValidateCodeUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.crypto.interfaces.PBEKey;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.security.PublicKey;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
@@ -28,6 +30,8 @@ public class UserController {
     @Autowired
     SMSUtils smsUtils;
 
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
     /**
      * 通过邮箱发送验证码
      * @param user
@@ -41,10 +45,17 @@ public class UserController {
         if(StringUtils.isNotEmpty(phone)){
             String code = ValidateCodeUtils.generateValidateCode(4).toString();
 
+            //判断是否是第一次请求验证码
+            if(stringRedisTemplate.opsForValue().get(phone) == null)
             smsUtils.sendSimpleMail(phone,"验证码","您的验证码是"+code);
+            else
+                return R.error("请勿重复请求邮箱验证码");
+//            session.setAttribute(phone,code);
 
-            session.setAttribute(phone,code);
-            R.success("邮箱验证码发送成功");
+            //将验证码缓存到redis中
+            stringRedisTemplate.opsForValue().set(phone,code,5, TimeUnit.MINUTES);
+
+            return R.success("邮箱验证码发送成功");
         }
         return R.error("邮箱验证码发送失败");
     }
@@ -65,20 +76,23 @@ public class UserController {
         方便测试使用
         如果邮箱号已经保存在user表中,code随便输入,直接登录成功
          */
-//        LambdaQueryWrapper<User> testquerywrapper=new LambdaQueryWrapper<>();
-//        testquerywrapper.eq(phone != null,User::getPhone,phone);
-//        User testuser = userService.getOne(testquerywrapper);
-//        if(testuser != null){
-//            session.setAttribute("user",testuser.getId());
-//            return R.success(testuser);
-//        }
+        LambdaQueryWrapper<User> testquerywrapper=new LambdaQueryWrapper<>();
+        testquerywrapper.eq(phone != null,User::getPhone,phone);
+        User testuser = userService.getOne(testquerywrapper);
+        if(testuser != null){
+            session.setAttribute("user",testuser.getId());
+            return R.success(testuser);
+        }
 
 
         //获取验证码
         String code = map.get("code").toString();
 
         //从Session中获取保存的验证码
-        Object codeInSession = session.getAttribute(phone);
+//        Object codeInSession = session.getAttribute(phone);
+
+        //从redis中获得缓存的验证码
+        Object codeInSession = stringRedisTemplate.opsForValue().get(phone);
 
         //进行验证码的比对（页面提交的验证码和Session中保存的验证码比对）
         if(codeInSession != null && codeInSession.equals(code)){
@@ -95,6 +109,8 @@ public class UserController {
                 userService.save(user);
             }
             session.setAttribute("user",user.getId());
+            //登录成功从缓存中删除key
+            stringRedisTemplate.delete(phone);
             return R.success(user);
         }
         return  R.error("登录失败");
