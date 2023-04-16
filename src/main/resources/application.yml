@@ -14,6 +14,11 @@ spring:
         stmp:
           ssl:
             enable: true
+  redis:
+    host: 175.178.6.100
+    port: 6379
+    password: 153280
+    database: 0
   application:
     name: reggie_take_out
   datasource:
