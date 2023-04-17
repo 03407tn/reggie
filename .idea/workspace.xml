@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e123d93c-e183-4a69-a978-29729c3e8631" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/tn/config/RedisConfig.java" afterDir="false" />
+    <list default="true" id="e123d93c-e183-4a69-a978-29729c3e8631" name="Default Changelist" comment="使用Redis缓存短信验证码和菜品数据">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tn/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tn/controller/DishController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/tn/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tn/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reggie_take_out.iml" beforeDir="false" afterPath="$PROJECT_DIR$/reggie_take_out.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tn/ReggieTakeOutApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tn/ReggieTakeOutApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tn/common/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tn/common/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tn/controller/SetmealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tn/controller/SetmealController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tn/common/JacksonObjectMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tn/common/JacksonObjectMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tn/ReggieTakeOutApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tn/ReggieTakeOutApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tn/common/R.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tn/common/R.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/tn/controller/DishController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tn/controller/DishController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tn/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tn/controller/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tn/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tn/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tn/controller/SetmealController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/tn/controller/SetmealController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,54 +185,54 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="594" y="308" key="Gitee.ShareDialog/0.0.1536.816@0.0.1536.816" timestamp="1681122209074" />
-    <state width="1493" height="342" key="GridCell.Tab.0.bottom" timestamp="1681632187217">
+    <state width="1493" height="8" key="GridCell.Tab.0.bottom" timestamp="1681723665091">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="342" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1681632187217" />
-    <state width="1493" height="342" key="GridCell.Tab.0.center" timestamp="1681632187217">
+    <state width="1493" height="8" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1681723665091" />
+    <state width="1493" height="8" key="GridCell.Tab.0.center" timestamp="1681723665091">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="342" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1681632187217" />
-    <state width="1493" height="342" key="GridCell.Tab.0.left" timestamp="1681632187217">
+    <state width="1493" height="8" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1681723665091" />
+    <state width="1493" height="8" key="GridCell.Tab.0.left" timestamp="1681723665091">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="342" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1681632187217" />
-    <state width="1493" height="342" key="GridCell.Tab.0.right" timestamp="1681632187217">
+    <state width="1493" height="8" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1681723665091" />
+    <state width="1493" height="8" key="GridCell.Tab.0.right" timestamp="1681723665091">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="342" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1681632187217" />
-    <state width="1493" height="342" key="GridCell.Tab.1.bottom" timestamp="1681632241451">
+    <state width="1493" height="8" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1681723665091" />
+    <state width="1493" height="225" key="GridCell.Tab.1.bottom" timestamp="1681723664902">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="342" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1681632241451" />
-    <state width="1493" height="342" key="GridCell.Tab.1.center" timestamp="1681632241451">
+    <state width="1493" height="225" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1681723664902" />
+    <state width="1493" height="225" key="GridCell.Tab.1.center" timestamp="1681723664902">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="342" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1681632241451" />
-    <state width="1493" height="342" key="GridCell.Tab.1.left" timestamp="1681632241451">
+    <state width="1493" height="225" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1681723664902" />
+    <state width="1493" height="225" key="GridCell.Tab.1.left" timestamp="1681723664902">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="342" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1681632241451" />
-    <state width="1493" height="342" key="GridCell.Tab.1.right" timestamp="1681632241451">
+    <state width="1493" height="225" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1681723664902" />
+    <state width="1493" height="225" key="GridCell.Tab.1.right" timestamp="1681723664902">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="342" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1681632241451" />
-    <state width="1493" height="342" key="GridCell.Tab.2.bottom" timestamp="1681632187071">
+    <state width="1493" height="225" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1681723664902" />
+    <state width="1493" height="8" key="GridCell.Tab.2.bottom" timestamp="1681723664891">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="342" key="GridCell.Tab.2.bottom/0.0.1536.816@0.0.1536.816" timestamp="1681632187071" />
-    <state width="1493" height="342" key="GridCell.Tab.2.center" timestamp="1681632187071">
+    <state width="1493" height="8" key="GridCell.Tab.2.bottom/0.0.1536.816@0.0.1536.816" timestamp="1681723664891" />
+    <state width="1493" height="8" key="GridCell.Tab.2.center" timestamp="1681723664891">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="342" key="GridCell.Tab.2.center/0.0.1536.816@0.0.1536.816" timestamp="1681632187071" />
-    <state width="1493" height="342" key="GridCell.Tab.2.left" timestamp="1681632187071">
+    <state width="1493" height="8" key="GridCell.Tab.2.center/0.0.1536.816@0.0.1536.816" timestamp="1681723664891" />
+    <state width="1493" height="8" key="GridCell.Tab.2.left" timestamp="1681723664891">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="342" key="GridCell.Tab.2.left/0.0.1536.816@0.0.1536.816" timestamp="1681632187071" />
-    <state width="1493" height="342" key="GridCell.Tab.2.right" timestamp="1681632187071">
+    <state width="1493" height="8" key="GridCell.Tab.2.left/0.0.1536.816@0.0.1536.816" timestamp="1681723664891" />
+    <state width="1493" height="8" key="GridCell.Tab.2.right" timestamp="1681723664891">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="342" key="GridCell.Tab.2.right/0.0.1536.816@0.0.1536.816" timestamp="1681632187071" />
+    <state width="1493" height="8" key="GridCell.Tab.2.right/0.0.1536.816@0.0.1536.816" timestamp="1681723664891" />
     <state x="262" y="50" key="SettingsEditor" timestamp="1681128117536">
       <screen x="0" y="0" width="1536" height="816" />
     </state>

@@ -19,6 +19,9 @@ spring:
     port: 6379
     password: 153280
     database: 0
+  cache:
+    redis:
+      time-to-live: 1800000 #设置缓存有效期
   application:
     name: reggie_take_out
   datasource:

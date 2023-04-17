@@ -17,6 +17,8 @@ import jdk.jfr.Timespan;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.print.Pageable;
@@ -46,6 +48,7 @@ public class SetmealController {
      * @return
      */
     @PostMapping
+    @CacheEvict(value = "setmealCache" ,allEntries = true)
     public R<String> save(@RequestBody SetmealDto setmealDto){
 
         setmealService.saveWithDish(setmealDto);
@@ -118,6 +121,7 @@ public class SetmealController {
      * @return
      */
     @PostMapping("/status/{status}")
+    @CacheEvict(value = "setmealCache" ,allEntries = true)
     public R<String> status(@PathVariable Integer status,@RequestParam List<Long> ids){
         for(Long id:ids){
             Setmeal setmeal = setmealService.getById(id);
@@ -134,6 +138,7 @@ public class SetmealController {
      * @return
      */
     @PutMapping
+    @CacheEvict(value = "setmealCache" ,allEntries = true)
     public R<String> update(@RequestBody SetmealDto setmealDto){
         setmealService.updateWithDish(setmealDto);
 
@@ -159,6 +164,7 @@ public class SetmealController {
      * @return
      */
     @GetMapping("/list")
+    @Cacheable(value = "setmealCache",key = "#setmeal.categoryId + '_' + #setmeal.status")
     public R<List<Setmeal>> list(Setmeal setmeal){
         LambdaQueryWrapper<Setmeal> queryWrapper=new LambdaQueryWrapper<>();
 
