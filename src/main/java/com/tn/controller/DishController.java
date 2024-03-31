@@ -95,7 +95,6 @@ public class DishController {
                 String categoryName = category.getName();
                 dishDto.setCategoryName(categoryName);
             }
-
             BeanUtils.copyProperties(item,dishDto);
 
             return dishDto;
